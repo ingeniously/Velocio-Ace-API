@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="FlowChart" />
+  <Subroutine Name="Led_Moteur1.viols" iObjectInstances="2" />
+  <Subroutine Name="led1.viofs" iObjectInstances="1" />
+  <Connections>
+    <Connection sKey="vFactoryPage" bRemoteWritable="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI16" dataSource="register" />
+    <Connection sKey="InBitB1" iPort="1" iPin="1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitB2" iPort="1" iPin="2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitB3" iPort="1" iPin="3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitB4" iPort="1" iPin="4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitB5" iPort="1" iPin="5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitB6" iPort="1" iPin="6" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitC1" iPort="2" iPin="1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitC2" iPort="2" iPin="2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitC3" iPort="2" iPin="3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitC4" iPort="2" iPin="4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitC5" iPort="2" iPin="5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="InBitC6" iPort="2" iPin="6" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="input" />
+    <Connection sKey="OutBitD1" iPort="3" iPin="1" motorControlPinType="stepperOut" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitD2" iPort="3" iPin="2" motorControlPinType="stepperDirection" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitD3" iPort="3" iPin="3" motorControlPinType="stepperOut2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitD4" iPort="3" iPin="4" motorControlPinType="stepperDirection2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitD5" iPort="3" iPin="5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitD6" iPort="3" iPin="6" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitE1" iPort="4" iPin="1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitE2" iPort="4" iPin="2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitE3" iPort="4" iPin="3" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitE4" iPort="4" iPin="4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitE5" iPort="4" iPin="5" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="OutBitE6" iPort="4" iPin="6" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="output" />
+    <Connection sKey="step" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="location" iModbusStart="3" iModbusEnd="4" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="locate" iModbusStart="1" iModbusEnd="2" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="local" iModbusStart="5" iModbusEnd="6" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="ok" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="gg" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="timer" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+  </Connections>
+  <Modbus>
+    <eModbusIDNumber sAddress="1" sIndex="" dtAddress="UI8" />
+  </Modbus>
+  <SubroutineInputs cellsHeigh="0" />
+  <Cells>
+    <start rung="0" row="1" column="6" cellsHeigh="-1" iSortedIndex="-1" />
+    <motionOut rung="0" row="9" column="18" cellsHeigh="3" iSortedIndex="4" iDeviceNumber="1" iMotorNumber="1">
+      <bStart value="True" />
+      <eMoveTo sAddress="30000" sIndex="" dtAddress="I32" />
+      <eAcceleration sAddress="3000" sIndex="" dtAddress="I16" />
+      <eSoftStart sAddress="200" sIndex="" dtAddress="I16" />
+      <eStepperLocation sAddress="location" sIndex="" dtAddress="I32" />
+      <bStoreLocationOfTransition value="False" />
+    </motionOut>
+    <Equal rung="0" row="22" column="1" cellsHeigh="-1" iSortedIndex="10">
+      <eAddress1 sAddress="step" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="2" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilCopy rung="0" row="22" column="35" cellsHeigh="3" iSortedIndex="14" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="step" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <wireRouter rung="0" row="18" column="42" cellsHeigh="-1" iSortedIndex="-1" />
+    <wireRouter rung="0" row="9" column="42" cellsHeigh="-1" iSortedIndex="-1" />
+    <Equal rung="0" row="9" column="1" cellsHeigh="-1" iSortedIndex="1">
+      <eAddress1 sAddress="step" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="0" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilCopy rung="0" row="4" column="2" cellsHeigh="3" iSortedIndex="0" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="step" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <coilCopy rung="0" row="9" column="36" cellsHeigh="3" iSortedIndex="5" CopyType="standard">
+      <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="step" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <Equal rung="0" row="14" column="1" cellsHeigh="-1" iSortedIndex="6">
+      <eAddress1 sAddress="step" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="1" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <Equal rung="0" row="14" column="9" cellsHeigh="-1" iSortedIndex="7">
+      <eAddress1 sAddress="location" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="30000" sIndex="" dtAddress="I16" />
+    </Equal>
+    <motionOut rung="0" row="14" column="18" cellsHeigh="3" iSortedIndex="8" iDeviceNumber="1" iMotorNumber="2">
+      <bStart value="True" />
+      <eMoveTo sAddress="3400" sIndex="" dtAddress="I32" />
+      <eAcceleration sAddress="3000" sIndex="" dtAddress="I16" />
+      <eSoftStart sAddress="200" sIndex="" dtAddress="I16" />
+      <eStepperLocation sAddress="locate" sIndex="" dtAddress="I32" />
+      <bStoreLocationOfTransition value="False" />
+    </motionOut>
+    <coilCopy rung="0" row="14" column="35" cellsHeigh="3" iSortedIndex="9" CopyType="standard">
+      <eKeySource sAddress="2" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="step" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <coilCopy rung="0" row="20" column="21" cellsHeigh="3" iSortedIndex="12" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="location" sIndex="" dtAddress="I32" />
+    </coilCopy>
+    <coilCopy rung="0" row="19" column="27" cellsHeigh="3" iSortedIndex="13" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="locate" sIndex="" dtAddress="I32" />
+    </coilCopy>
+    <Equal rung="0" row="22" column="10" cellsHeigh="-1" iSortedIndex="11">
+      <eAddress1 sAddress="locate" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="3400" sIndex="" dtAddress="I16" />
+    </Equal>
+    <NC rung="0" row="9" column="9" cellsHeigh="-1" iSortedIndex="2">
+      <eAddress1 sAddress="InBitB1" sIndex="" dtAddress="Bit" />
+    </NC>
+    <coilSubroutine rung="0" row="4" column="10" cellsHeigh="3" iSortedIndex="-1" SubroutineName="led1.viofs" bIsEmbeddedSub="false">
+      <eKeyDataSetNumber sAddress="1" sIndex="" dtAddress="UI8" />
+      <eLocal sAddress="location" sIndex="" dtAddress="I32" />
+      <eSub sAddress="rotation" sIndex="" dtAddress="I32" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="OutBitE2" sIndex="" dtAddress="Bit" />
+      <eSub sAddress="led" sIndex="" dtAddress="Bit" />
+      <bPassByRefOrFromEmbedded value="True" />
+      <eLocal sAddress="step" sIndex="" dtAddress="UI8" />
+      <eSub sAddress="ssetp" sIndex="" dtAddress="UI8" />
+      <bPassByRefOrFromEmbedded value="True" />
+    </coilSubroutine>
+    <coilCopy rung="0" row="9" column="12" cellsHeigh="3" iSortedIndex="3" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="gg" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <Equal rung="0" row="4" column="7" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="gg" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="0" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilCopy rung="0" row="4" column="18" cellsHeigh="3" iSortedIndex="-1" CopyType="standard">
+      <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="gg" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+  </Cells>
+  <FlowConnections>
+    <FlowConn From="0" Yes="7" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="1" Yes="8" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="2" Yes="15" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="3" Yes="4" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="4" Yes="5" dirYesFrom="up" dirYesTo="down" />
+    <FlowConn From="5" Yes="6" dirYesFrom="up" dirYesTo="up" />
+    <FlowConn From="6" Yes="16" dirYesFrom="right" dirYesTo="left" No="9" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="7" Yes="6" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="8" Yes="5" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="9" Yes="10" dirYesFrom="right" dirYesTo="left" No="2" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="10" Yes="11" dirYesFrom="right" dirYesTo="left" No="5" dirNoFrom="down" dirNoTo="down" />
+    <FlowConn From="11" Yes="12" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="12" Yes="5" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="13" Yes="14" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="14" Yes="3" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="15" Yes="13" dirYesFrom="right" dirYesTo="left" No="4" dirNoFrom="down" dirNoTo="down" />
+    <FlowConn From="16" Yes="18" dirYesFrom="right" dirYesTo="left" No="5" dirNoFrom="down" dirNoTo="down" />
+    <FlowConn From="17" Yes="20" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="18" Yes="1" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="19" Yes="17" dirYesFrom="right" dirYesTo="left" No="18" dirNoFrom="left" dirNoTo="up" />
+    <FlowConn From="20" Yes="1" dirYesFrom="right" dirYesTo="left" />
+  </FlowConnections>
+  <Wires />
+  <Comments />
+</VelocioNetworks>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="FlowChart" />
+  <Connections>
+    <Connection sKey="rotation" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="led" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="time" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="ssetp" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+  </Connections>
+  <Modbus />
+  <SubroutineInputs cellsHeigh="2">
+    <Input sAddress="rotation" sIndex="" dtAddress="I32" />
+    <Input sAddress="led" sIndex="" dtAddress="Bit" />
+    <Input sAddress="ssetp" sIndex="" dtAddress="UI8" />
+  </SubroutineInputs>
+  <Cells>
+    <start rung="0" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <coilSet rung="0" row="9" column="10" cellsHeigh="-1" iSortedIndex="2">
+      <eAddress1 sAddress="led" sIndex="" dtAddress="Bit" />
+    </coilSet>
+    <coilTimer rung="0" row="9" column="15" cellsHeigh="3" iSortedIndex="3" myType="Timer" myTimerCommand="Reset">
+      <eKeyTimer sAddress="time" sIndex="" dtAddress="I32" />
+    </coilTimer>
+    <coilCopy rung="0" row="9" column="19" cellsHeigh="3" iSortedIndex="4" CopyType="standard">
+      <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="ssetp" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <TimerCompare rung="0" row="14" column="9" cellsHeigh="-1" iSortedIndex="7" timerCompareType="GreaterOrEqual" timeUnit="sec">
+      <eKeyTimerValue sAddress="time" sIndex="" dtAddress="I32" />
+      <eKeyDuration sAddress="2" sIndex="" dtAddress="UI8" />
+    </TimerCompare>
+    <Equal rung="0" row="9" column="1" cellsHeigh="-1" iSortedIndex="1">
+      <eAddress1 sAddress="ssetp" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="0" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilCopy rung="0" row="5" column="1" cellsHeigh="3" iSortedIndex="0" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="ssetp" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <Equal rung="0" row="14" column="1" cellsHeigh="-1" iSortedIndex="5">
+      <eAddress1 sAddress="ssetp" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="1" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilCopy rung="0" row="14" column="20" cellsHeigh="3" iSortedIndex="8" CopyType="standard">
+      <eKeySource sAddress="2" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="ssetp" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <wireRouter rung="0" row="8" column="25" cellsHeigh="-1" iSortedIndex="-1" />
+    <Equal rung="0" row="19" column="1" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="ssetp" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="2" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilReset rung="0" row="19" column="7" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="led" sIndex="" dtAddress="Bit" />
+    </coilReset>
+    <coilTimer rung="0" row="19" column="15" cellsHeigh="3" iSortedIndex="-1" myType="Timer" myTimerCommand="Reset">
+      <eKeyTimer sAddress="time" sIndex="" dtAddress="I32" />
+    </coilTimer>
+    <coilCopy rung="0" row="19" column="19" cellsHeigh="3" iSortedIndex="-1" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="ssetp" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <coilTimer rung="0" row="14" column="5" cellsHeigh="3" iSortedIndex="6" myType="Timer" myTimerCommand="Start">
+      <eKeyTimer sAddress="time" sIndex="" dtAddress="I32" />
+    </coilTimer>
+  </Cells>
+  <FlowConnections>
+    <FlowConn From="0" Yes="6" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="1" Yes="2" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="2" Yes="3" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="3" Yes="9" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="4" Yes="8" dirYesFrom="right" dirYesTo="left" No="9" dirNoFrom="down" dirNoTo="down" />
+    <FlowConn From="5" Yes="1" dirYesFrom="right" dirYesTo="left" No="7" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="6" Yes="5" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="7" Yes="14" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="8" Yes="9" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="9" Yes="5" dirYesFrom="up" dirYesTo="up" />
+    <FlowConn From="10" Yes="11" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="11" Yes="12" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="12" Yes="13" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="13" Yes="9" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="14" Yes="4" dirYesFrom="right" dirYesTo="left" />
+  </FlowConnections>
+  <Wires />
+  <Comments />
+</VelocioNetworks>

@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="LadderLogic" />
+  <Connections>
+    <Connection sKey="rect" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="Step" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="formerectangle" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="carr" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="formecarre" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+  </Connections>
+  <Modbus />
+  <SubroutineInputs cellsHeigh="1">
+    <Input sAddress="carr" sIndex="" dtAddress="Bit" />
+    <Input sAddress="rect" sIndex="" dtAddress="Bit" />
+    <Input sAddress="formerectangle" sIndex="" dtAddress="Bit" />
+    <Input sAddress="formecarre" sIndex="" dtAddress="Bit" />
+    <Input sAddress="Step" sIndex="" dtAddress="UI8" />
+  </SubroutineInputs>
+  <Cells>
+    <coilSet rung="1" row="1" column="8" cellsHeigh="-1" iSortedIndex="0">
+      <eAddress1 sAddress="formerectangle" sIndex="" dtAddress="Bit" />
+    </coilSet>
+    <blankHorizontal rung="1" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="1" row="1" column="2" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="1" row="1" column="3" cellsHeigh="-1" iSortedIndex="-1" />
+    <NO rung="1" row="1" column="4" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="rect" sIndex="" dtAddress="Bit" />
+    </NO>
+    <blankHorizontal rung="1" row="1" column="5" cellsHeigh="-1" iSortedIndex="-1" />
+    <coilSet rung="2" row="1" column="8" cellsHeigh="-1" iSortedIndex="1">
+      <eAddress1 sAddress="formecarre" sIndex="" dtAddress="Bit" />
+    </coilSet>
+    <blankHorizontal rung="2" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="2" row="1" column="2" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="2" row="1" column="3" cellsHeigh="-1" iSortedIndex="-1" />
+    <NO rung="2" row="1" column="4" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="carr" sIndex="" dtAddress="Bit" />
+    </NO>
+    <blankHorizontal rung="2" row="1" column="5" cellsHeigh="-1" iSortedIndex="-1" />
+    <coilCopy rung="3" row="1" column="7" cellsHeigh="1" iSortedIndex="2" CopyType="standard">
+      <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="Step" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <blankHorizontal rung="3" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="3" row="1" column="2" cellsHeigh="-1" iSortedIndex="-1" />
+    <NO rung="3" row="1" column="3" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="carr" sIndex="" dtAddress="Bit" />
+    </NO>
+    <blankHorizontal rung="3" row="1" column="4" cellsHeigh="-1" iSortedIndex="-1" />
+    <coilCopy rung="4" row="1" column="7" cellsHeigh="1" iSortedIndex="3" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="Step" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <blankHorizontal rung="4" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="4" row="1" column="2" cellsHeigh="-1" iSortedIndex="-1" />
+    <NO rung="4" row="1" column="3" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="rect" sIndex="" dtAddress="Bit" />
+    </NO>
+    <blankHorizontal rung="4" row="1" column="4" cellsHeigh="-1" iSortedIndex="-1" />
+    <NC rung="1" row="1" column="6" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="carr" sIndex="" dtAddress="Bit" />
+    </NC>
+    <blankHorizontal rung="1" row="1" column="7" cellsHeigh="-1" iSortedIndex="-1" />
+    <NC rung="2" row="1" column="6" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="rect" sIndex="" dtAddress="Bit" />
+    </NC>
+    <blankHorizontal rung="2" row="1" column="7" cellsHeigh="-1" iSortedIndex="-1" />
+    <coilCopy rung="5" row="1" column="7" cellsHeigh="1" iSortedIndex="4" CopyType="standard">
+      <eKeySource sAddress="15" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="Step" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <blankHorizontal rung="5" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="5" row="1" column="2" cellsHeigh="-1" iSortedIndex="-1" />
+    <NC rung="5" row="1" column="3" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="carr" sIndex="" dtAddress="Bit" />
+    </NC>
+    <NC rung="3" row="1" column="5" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="rect" sIndex="" dtAddress="Bit" />
+    </NC>
+    <blankHorizontal rung="3" row="1" column="6" cellsHeigh="-1" iSortedIndex="-1" />
+    <NC rung="4" row="1" column="5" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="carr" sIndex="" dtAddress="Bit" />
+    </NC>
+    <blankHorizontal rung="4" row="1" column="6" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="5" row="1" column="4" cellsHeigh="-1" iSortedIndex="-1" />
+    <NC rung="5" row="1" column="5" cellsHeigh="-1" iSortedIndex="-1">
+      <eAddress1 sAddress="rect" sIndex="" dtAddress="Bit" />
+    </NC>
+    <blankHorizontal rung="5" row="1" column="6" cellsHeigh="-1" iSortedIndex="-1" />
+    <coilReturn rung="6" row="1" column="8" cellsHeigh="-1" iSortedIndex="5" />
+    <blankHorizontal rung="6" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="6" row="1" column="2" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="6" row="1" column="3" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="6" row="1" column="4" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="6" row="1" column="5" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="6" row="1" column="6" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="6" row="1" column="7" cellsHeigh="-1" iSortedIndex="-1" />
+  </Cells>
+  <Wires />
+  <Comments>
+    <Comment Index="0" bComment="False" sComment="" />
+    <Comment Index="1" bComment="False" sComment="" />
+    <Comment Index="2" bComment="False" sComment="" />
+    <Comment Index="3" bComment="False" sComment="" />
+    <Comment Index="4" bComment="False" sComment="" />
+    <Comment Index="5" bComment="False" sComment="" />
+  </Comments>
+</VelocioNetworks>

@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="FlowChart" />
+  <Connections>
+    <Connection sKey="cercle" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="etape" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="etape1" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="Xmoteur" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="Ymoteur" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="carre" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+  </Connections>
+  <Modbus />
+  <SubroutineInputs cellsHeigh="2">
+    <Input sAddress="carre" sIndex="" dtAddress="UI8" />
+  </SubroutineInputs>
+  <Cells>
+    <start rung="0" row="2" column="6" cellsHeigh="-1" iSortedIndex="-1" />
+    <Equal rung="0" row="16" column="2" cellsHeigh="-1" iSortedIndex="2">
+      <eAddress1 sAddress="etape1" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="0" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <Equal rung="0" row="29" column="2" cellsHeigh="-1" iSortedIndex="14">
+      <eAddress1 sAddress="etape1" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="3" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <Equal rung="0" row="29" column="8" cellsHeigh="-1" iSortedIndex="15">
+      <eAddress1 sAddress="Ymoteur" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="0" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <motionOut rung="0" row="21" column="13" cellsHeigh="3" iSortedIndex="8" iDeviceNumber="1" iMotorNumber="2">
+      <bStart value="True" />
+      <eMoveTo sAddress="3200" sIndex="" dtAddress="I32" />
+      <eAcceleration sAddress="6000" sIndex="" dtAddress="I16" />
+      <eSoftStart sAddress="100" sIndex="" dtAddress="I16" />
+      <eStepperLocation sAddress="Ymoteur" sIndex="" dtAddress="I32" />
+      <bStoreLocationOfTransition value="False" />
+    </motionOut>
+    <motionOut rung="0" row="16" column="7" cellsHeigh="3" iSortedIndex="3" iDeviceNumber="1" iMotorNumber="1">
+      <bStart value="True" />
+      <eMoveTo sAddress="5000" sIndex="" dtAddress="I32" />
+      <eAcceleration sAddress="3000" sIndex="" dtAddress="I16" />
+      <eSoftStart sAddress="200" sIndex="" dtAddress="I16" />
+      <eStepperLocation sAddress="Xmoteur" sIndex="" dtAddress="I32" />
+      <bStoreLocationOfTransition value="False" />
+    </motionOut>
+    <coilCopy rung="0" row="16" column="14" cellsHeigh="3" iSortedIndex="4" CopyType="standard">
+      <eKeySource sAddress="1" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="etape1" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <coilCopy rung="0" row="21" column="19" cellsHeigh="3" iSortedIndex="9" CopyType="standard">
+      <eKeySource sAddress="2" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="etape1" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <coilCopy rung="0" row="29" column="13" cellsHeigh="3" iSortedIndex="16" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="Xmoteur" sIndex="" dtAddress="I32" />
+    </coilCopy>
+    <coilCopy rung="0" row="29" column="20" cellsHeigh="3" iSortedIndex="17" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="I32" />
+      <eKeyDestination sAddress="Ymoteur" sIndex="" dtAddress="I32" />
+    </coilCopy>
+    <coilCopy rung="0" row="29" column="26" cellsHeigh="3" iSortedIndex="18" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="etape1" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <Equal rung="0" row="21" column="8" cellsHeigh="-1" iSortedIndex="7">
+      <eAddress1 sAddress="Xmoteur" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="5000" sIndex="" dtAddress="I16" />
+    </Equal>
+    <wireRouter rung="0" row="14" column="31" cellsHeigh="-1" iSortedIndex="-1" />
+    <Equal rung="0" row="25" column="2" cellsHeigh="-1" iSortedIndex="10">
+      <eAddress1 sAddress="etape1" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="2" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <Equal rung="0" row="25" column="8" cellsHeigh="-1" iSortedIndex="11">
+      <eAddress1 sAddress="Ymoteur" sIndex="" dtAddress="I32" />
+      <eAddress2 sAddress="3200" sIndex="" dtAddress="I16" />
+    </Equal>
+    <motionOut rung="0" row="25" column="13" cellsHeigh="3" iSortedIndex="12" iDeviceNumber="1" iMotorNumber="2">
+      <bStart value="True" />
+      <eMoveTo sAddress="0" sIndex="" dtAddress="I32" />
+      <eAcceleration sAddress="6000" sIndex="" dtAddress="I16" />
+      <eSoftStart sAddress="100" sIndex="" dtAddress="I16" />
+      <eStepperLocation sAddress="Ymoteur" sIndex="" dtAddress="I32" />
+      <bStoreLocationOfTransition value="False" />
+    </motionOut>
+    <Equal rung="0" row="21" column="2" cellsHeigh="-1" iSortedIndex="6">
+      <eAddress1 sAddress="etape1" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="1" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <Equal rung="0" row="5" column="3" cellsHeigh="-1" iSortedIndex="0">
+      <eAddress1 sAddress="carre" sIndex="" dtAddress="UI8" />
+      <eAddress2 sAddress="1" sIndex="" dtAddress="UI8" />
+    </Equal>
+    <coilCopy rung="0" row="9" column="2" cellsHeigh="3" iSortedIndex="1" CopyType="standard">
+      <eKeySource sAddress="0" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="etape1" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+    <coilCopy rung="0" row="25" column="21" cellsHeigh="3" iSortedIndex="13" CopyType="standard">
+      <eKeySource sAddress="3" sIndex="" dtAddress="UI8" />
+      <eKeyDestination sAddress="etape1" sIndex="" dtAddress="UI8" />
+    </coilCopy>
+  </Cells>
+  <FlowConnections>
+    <FlowConn From="0" Yes="17" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="1" Yes="5" dirYesFrom="right" dirYesTo="left" No="16" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="2" Yes="3" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="3" Yes="8" dirYesFrom="right" dirYesTo="left" No="12" dirNoFrom="down" dirNoTo="down" />
+    <FlowConn From="4" Yes="7" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="5" Yes="6" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="6" Yes="12" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="7" Yes="12" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="8" Yes="9" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="9" Yes="10" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="10" Yes="12" dirYesFrom="right" dirYesTo="down" />
+    <FlowConn From="11" Yes="4" dirYesFrom="right" dirYesTo="left" No="12" dirNoFrom="down" dirNoTo="down" />
+    <FlowConn From="12" Yes="1" dirYesFrom="up" dirYesTo="up" />
+    <FlowConn From="13" Yes="14" dirYesFrom="right" dirYesTo="left" No="2" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="14" Yes="15" dirYesFrom="right" dirYesTo="left" No="12" dirNoFrom="down" dirNoTo="down" />
+    <FlowConn From="15" Yes="19" dirYesFrom="right" dirYesTo="left" />
+    <FlowConn From="16" Yes="11" dirYesFrom="right" dirYesTo="left" No="13" dirNoFrom="down" dirNoTo="up" />
+    <FlowConn From="17" Yes="18" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="18" Yes="1" dirYesFrom="down" dirYesTo="up" />
+    <FlowConn From="19" Yes="12" dirYesFrom="right" dirYesTo="down" />
+  </FlowConnections>
+  <Wires />
+  <Comments />
+</VelocioNetworks>

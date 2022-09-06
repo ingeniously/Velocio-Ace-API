@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--Velocio Builder 1.1-->
+<!--www.Velocio.net-->
+<VelocioNetworks IPAddress="">
+  <Setup ProjectType="LadderLogic" />
+  <Connections>
+    <Connection sKey="led" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="Bit" dataSource="register" />
+    <Connection sKey="time" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="I32" dataSource="register" />
+    <Connection sKey="cstep" bPassedByRef="True" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+    <Connection sKey="pstep" ui32Mask="0" ui32MessageId="0" ui32Period="0" dataType="UI8" dataSource="register" />
+  </Connections>
+  <Modbus />
+  <SubroutineInputs cellsHeigh="1">
+    <Input sAddress="led" sIndex="" dtAddress="Bit" />
+    <Input sAddress="cstep" sIndex="" dtAddress="UI8" />
+  </SubroutineInputs>
+  <Cells>
+    <coilReturn rung="1" row="1" column="4" cellsHeigh="-1" iSortedIndex="0" />
+    <blankHorizontal rung="1" row="1" column="1" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="1" row="1" column="2" cellsHeigh="-1" iSortedIndex="-1" />
+    <blankHorizontal rung="1" row="1" column="3" cellsHeigh="-1" iSortedIndex="-1" />
+  </Cells>
+  <Wires />
+  <Comments>
+    <Comment Index="0" bComment="False" sComment="" />
+  </Comments>
+</VelocioNetworks>
